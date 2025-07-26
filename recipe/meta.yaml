@@ -1,4 +1,4 @@
-{% set version = "0.12.5" %}
+{% set version = "0.12.6" %}
 
 package:
   name: lintrunner-adapters
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/lintrunner-adapters/lintrunner_adapters-{{ version }}.tar.gz
-  sha256: 33a7e559b1ec3cc91d39bb1e5d6b75d28484d3179498ab9ca8e246a30c59d2fa
+  sha256: 3ba6a449733d851dc73a7f28bbf7bd14c5e618a0bcd8c016c5f2b4c77e19c4ba
 
 build:
   number: 0
