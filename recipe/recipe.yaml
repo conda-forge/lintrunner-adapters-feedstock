@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "0.13.0"
+  python_check_max: "3.14"
 
 package:
   name: lintrunner-adapters
@@ -25,10 +26,9 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core <2
     - python ${{ python_min }}.*
   run:
-    - click >=8.1.3,<9.0.0
+    - click >=8.1.3
     - python >=${{ python_min }}
 
 tests:
@@ -37,7 +37,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - requirements:
       run:
         - python ${{ python_min }}.*
@@ -48,7 +48,8 @@ about:
   summary: Adapters and tools for lintrunner
   license: MIT
   license_file: LICENSE
-  homepage: https://github.com/justinchuby/lintrunner-adapters
+  homepage: https://pypi.org/project/lintrunner-adapters
+  repository: https://github.com/justinchuby/lintrunner-adapters
 
 extra:
   recipe-maintainers:
