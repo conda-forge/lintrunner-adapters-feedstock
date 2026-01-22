@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 0.12.6
+  version: "0.13.0"
 
 package:
   name: lintrunner-adapters
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/lintrunner-adapters/lintrunner_adapters-${{ version }}.tar.gz
-  sha256: 3ba6a449733d851dc73a7f28bbf7bd14c5e618a0bcd8c016c5f2b4c77e19c4ba
+  sha256: cd5a240398a778cab6f69ebf79e4fd41beb8a47559e1fae5986c75932e5f3b12
 
 build:
   number: 0
