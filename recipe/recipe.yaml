@@ -18,7 +18,6 @@ build:
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
-    - ${{ PYTHON }} -c "import os, pathlib; sp = pathlib.Path(os.environ['SP_DIR']); [(sp / f).unlink() for f in ['LICENSE']]"
   python:
     entry_points:
       - lintrunner_adapters = lintrunner_adapters.__main__:cli
