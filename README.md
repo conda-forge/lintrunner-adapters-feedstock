@@ -3,11 +3,13 @@ About lintrunner-adapters-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lintrunner-adapters-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/justinchuby/lintrunner-adapters
+Home: https://pypi.org/project/lintrunner-adapters
 
 Package license: MIT
 
 Summary: Adapters and tools for lintrunner
+
+Development: https://github.com/justinchuby/lintrunner-adapters
 
 Current build status
 ====================
