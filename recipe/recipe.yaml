@@ -39,9 +39,12 @@ tests:
         - ${{ python_check_max }}.*
   - requirements:
       run:
+        - pytest-cov
         - python ${{ python_min }}.*
     script:
       - lintrunner_adapters --help
+      - coverage run --source=lintrunner_adapters --branch -m pytest -vv --tb=long --color=yes --pyargs lintrunner_adapters
+      - coverage report --show-missing --skip-covered --fail-under=39
 
 about:
   summary: Adapters and tools for lintrunner
