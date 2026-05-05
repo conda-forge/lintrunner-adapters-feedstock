@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.13.0"
+  version: "0.14.0"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/lintrunner-adapters/lintrunner_adapters-${{ version }}.tar.gz
-  sha256: cd5a240398a778cab6f69ebf79e4fd41beb8a47559e1fae5986c75932e5f3b12
+  sha256: e082635deca87368dea3f644a50c438c992bcb23342c39ec5b5497e034277a89
 
 build:
   number: 0
