@@ -2,8 +2,9 @@
 schema_version: 1
 
 context:
-  version: "0.14.0"
+  version: "0.14.1"
   python_check_max: "3.14"
+  cov_run: coverage run --source=lintrunner_adapters --branch --append
 
 package:
   name: lintrunner-adapters
@@ -11,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/lintrunner-adapters/lintrunner_adapters-${{ version }}.tar.gz
-  sha256: e082635deca87368dea3f644a50c438c992bcb23342c39ec5b5497e034277a89
+  sha256: 5bae960e99ff71d1a2bf4a51b6bf6dd066f3170627dcadb0802eb70237af182d
 
 build:
   number: 0
@@ -26,6 +27,7 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
+    - setuptools
   run:
     - click >=8.1.3
     - python >=${{ python_min }}
@@ -38,14 +40,24 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - ${{ python_check_max }}.*
-  - requirements:
+  - files:
+      source:
+        - pyproject.toml
+    requirements:
       run:
         - pytest-cov
         - python ${{ python_min }}.*
+        # from requirements-test.txt
+        - defusedxml >=0.7.1
+        - pyupgrade ==3.3.1
+        - refurb ==1.10.0
+        - ufmt ==2.0.1
     script:
-      - lintrunner_adapters --help
-      - coverage run --source=lintrunner_adapters --branch -m pytest -vv --tb=long --color=yes --pyargs lintrunner_adapters
-      - coverage report --show-missing --skip-covered --fail-under=39
+      - ${{ cov_run }} -m lintrunner_adapters --help
+      - ${{ cov_run }} -m lintrunner_adapters run --help
+      - ${{ cov_run }} -m lintrunner_adapters to-sarif --help
+      - ${{ cov_run }} -m pytest -vv --tb=long --color=yes --pyargs lintrunner_adapters
+      - coverage report --show-missing --skip-covered --fail-under=49
 
 about:
   summary: Adapters and tools for lintrunner
